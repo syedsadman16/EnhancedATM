@@ -18,10 +18,10 @@
                <font>
                   <Font name="System Italic" size="33.0" />
                </font></Label>
-            <Button fx:id="wdrawBtn" layoutX="226.0" layoutY="238.0" mnemonicParsing="false" text="Withdraw" />
-            <Button fx:id="DepBtn" layoutX="236.0" layoutY="313.0" mnemonicParsing="false" text="Deposit" />
-            <Button fx:id="asumBtn" layoutX="208.0" layoutY="392.0" mnemonicParsing="false" text="Account Summary" />
-            <Button fx:id="settingBtn" layoutX="235.0" layoutY="453.0" mnemonicParsing="false" text="Settings" />
+            <Button fx:id="wdrawBtn" layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onAction="#goToTransactionScreen" text="Withdraw" />
+            <Button fx:id="DepBtn" layoutX="236.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToDepositScreen" text="Deposit" />
+            <Button fx:id="asumBtn" layoutX="208.0" layoutY="392.0" mnemonicParsing="false" onAction="#goToSummaryScreen" text="Account Summary" />
+            <Button fx:id="settingBtn" layoutX="235.0" layoutY="453.0" mnemonicParsing="false" onAction="#goToSettingsScreen" text="Settings" />
          </children>
       </AnchorPane>
    </children>
