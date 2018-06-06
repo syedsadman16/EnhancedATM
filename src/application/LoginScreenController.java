@@ -78,14 +78,21 @@
 			
 		    public void login(ActionEvent event) throws IOException {
 
-			Parent nextScene = FXMLLoader.load( getClass().getResource("/application/AccountScreen.fxml") );
+		    FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
+			Parent nextScene = loader.load();
 			Scene acctScreen = new Scene(nextScene);
+			//gets stage information to be set to preferred screen
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-				
-		    Account acct = new Account();
-		    acct.setName( "Syed");
-		    acct.setPinNum(1234);
-		    int num = acct.pinNum;
+			
+			InitScreenController controller = new InitScreenController();
+	//Retrieve methods from other scene such as getInfo() method
+		int pin	= Integer.parseInt(controller.creditCard.getText());
+			//int pin = controller.getPin();
+			Account acct = new Account(pin);
+			int num = acct.getPin();
+		    //Get info from account and set it to value of pin
+		  
 		    
 		    	if(Integer.parseInt((pinScreen.getText())) == num) {
 		    		window.setScene(acctScreen);
