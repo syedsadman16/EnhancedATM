@@ -2,8 +2,6 @@ package application;
 
 public class Account {
 	
-	
-	//Testing purposes
 	BankData data;
 	
 	String name;
@@ -12,32 +10,37 @@ public class Account {
 	int accountNum;
 	String email;
 	
-	//int accountNum, String name, int balance, int pinNum
+	
 	public Account(int accountNum) {
 		this.accountNum = accountNum;
 	}
 	
 	
 	public int getPin() {
-	
 		data = new BankData();
-		return data.findPin(accountNum);
-		
+		pinNum = data.findPin(accountNum);
+		return pinNum;
 	}
-	
-	public void setAccountNum(int accountNum) {
-		this.accountNum = accountNum;
-	}
-	
 
-	public void getName(String name) {
-		this.name = name; 
+	public int getBalance() {
+		data = new BankData();
+		balance = data.findBalance(accountNum);
+		return balance;
+	}
+	
+	public String getName() {
+		data = new BankData();
+		name = data.findName(accountNum);
+		return name;
+	}
+	
+	public String getEmail() {
+		data = new BankData();
+		email =  data.findEmail(accountNum);
+		return email;
 	}
 	
 	
-	public void setPinNum(int pinNum) {
-		this.pinNum = pinNum;
-	}
 	
 
 
