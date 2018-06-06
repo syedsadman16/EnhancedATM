@@ -10,10 +10,11 @@
 	import javafx.scene.Parent;
 	import javafx.scene.Scene;
 	import javafx.scene.control.Button;
-	import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 	import javafx.stage.Stage;
 
-	public class LoginScreenController {
+	public class LoginScreenController {		
 		 @FXML
 		    private ResourceBundle resources;
 		    @FXML
@@ -77,7 +78,7 @@
 		    }
 			
 		    public void login(ActionEvent event) throws IOException {
-
+				
 		    FXMLLoader loader = new FXMLLoader();
 		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
 			Parent nextScene = loader.load();
@@ -86,17 +87,21 @@
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
 			InitScreenController controller = new InitScreenController();
+			AccountScreenController name = loader.getController(); //created controller instance
 	//Retrieve methods from other scene such as getInfo() method
-		int pin	= Integer.parseInt(controller.creditCard.getText());
+		int pin	= Integer.parseInt(controller.creditCard.getText()); 
 			//int pin = controller.getPin();
 			Account acct = new Account(pin);
 			int num = acct.getPin();
+			String i = acct.getName();
 		    //Get info from account and set it to value of pin
-		  
+			Label change = name.nameLabel;
+			change.setText(i);
 		    
 		    	if(Integer.parseInt((pinScreen.getText())) == num) {
 		    		window.setScene(acctScreen);
 					window.show();
+					
 		    	}
 		   
 		   }

@@ -36,7 +36,7 @@ public class InitScreenController {
 		//Whatever account is put into this, use info from that account to fill in button
 	}
 	
-	//make a method to change pin
+	//make a method to change acctNum
 	  
 	   
 	  
