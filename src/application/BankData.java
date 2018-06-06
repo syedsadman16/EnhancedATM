@@ -24,5 +24,12 @@ public class BankData {
 		int pin = (int) arr[index][2];
 		return pin;
 	}
+	
+	public void addString(int x, int y, String content) {
+		arr[x][y] = content;
+	}
+	public void addInt(int x, int y, int content) {
+		arr[x][y] = content;
+	}
 	   
 }
