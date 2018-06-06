@@ -28,11 +28,11 @@ public class BankData {
 		return pin;
 	}
 //method to find name
-public String findName(String n) {
+public String findName(int n) {
 		
 		for (int i = 0 ; i < arr.length; i++) {
 		    for(int j = 0 ; j < arr.length ; j++) {
-		         if (arr[i][j] == new String(n)) {
+		         if (arr[i][j] == new Integer(n)) {
 		              index = i;
 		              break;
 		         }
@@ -60,11 +60,11 @@ public int findBalance(int n) {
 }
 
 //method to find email
-public String findEmail(String n) {
+public String findEmail(int n) {
 	
 	for (int i = 0 ; i < arr.length; i++) {
 	    for(int j = 0 ; j < arr.length ; j++) {
-	         if (arr[i][j] == new String(n)) {
+	         if (arr[i][j] == new Integer(n)) {
 	              index = i;
 	              break;
 	         }
