@@ -48,9 +48,19 @@ import javafx.fxml.FXML;
 	    @FXML
 	    private Button zero;
 	    @FXML
+	    private Button clearMoney;
+	    @FXML
 	    private TextField cashScreen;
-	    Label money;
-
+	    @FXML
+	    private Label money; 
+	    int currency;
+	    
+	    
+	   /* Add counters to keep track of types of bills; remove bills
+	   int tenCounter;
+	   int twentyCounter;
+	   int fiftyCounter;
+	   int hundredCouter;  */
 	    
 	    public void buttonClicks(ActionEvent e) {
 	    	if(e.getSource() == one) {
@@ -87,22 +97,42 @@ import javafx.fxml.FXML;
 
 	    public void presetMoney(ActionEvent e){
 	    	if(e.getSource() == tenDollars)	{
-	    		money.setText((money.getText()) + "10");
+	    		currency += 10;
+	    		money.setText("" + currency);
 			}
 			if(e.getSource() == twentyDollars)	{
-				money.setText((money.getText()) + "20");
+				currency += 20;
+				money.setText("" + currency);
 	    	}
 	    	if(e.getSource() == fiftyDollars)	{
-				money.setText((money.getText()) + "50");
+	    		currency += 50;	    	
+	    		money.setText("" + currency);
 	    	}
 	    	if(e.getSource() == oneHundredDollars) {
-				money.setText((money.getText()) + "100");
+	    		currency += 100;
+	    		money.setText("" + currency);
 			}
+	    	if(e.getSource() == clearMoney) {
+	    		currency = 0;
+	    		money.setText("" + currency);
+	    	}
 		}
-
-	    public void setMoney(){
-			money.setText(cashScreen.getText() + money.getText());
-		}
+	    
+	    public void combineCurrency() {
+	    	if(money.getText().isEmpty()) {
+	    		money.setText(cashScreen.getText());
+	    	} else {
+	    	int moneyField = Integer.parseInt(money.getText());
+	    	int cashField = Integer.parseInt(cashScreen.getText());
+	    	int total = moneyField + cashField;
+	    	money.setText("" + total);
+	    	}
+	    }
+	    
+	    public void resetCashField() {
+	    	cashScreen.setText("");
+	    	
+	    }
 
 	    @FXML
 	    void initialize() {

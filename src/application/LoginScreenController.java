@@ -88,6 +88,7 @@ import javafx.scene.control.TextField;
 			
 			InitScreenController controller = new InitScreenController();
 			AccountScreenController name = loader.getController(); //created controller instance
+			
 	//Retrieve methods from other scene such as getInfo() method
 		int pin	= Integer.parseInt(controller.creditCard.getText()); 
 			//int pin = controller.getPin();
