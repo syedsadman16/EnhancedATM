@@ -5,7 +5,8 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 	import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+	import javafx.scene.control.Label;
+	import javafx.scene.control.TextField;
 
 	public class TransactionScreenController {
 
@@ -48,6 +49,8 @@ import javafx.scene.control.TextField;
 	    private Button zero;
 	    @FXML
 	    private TextField cashScreen;
+	    Label money;
+
 	    
 	    public void buttonClicks(ActionEvent e) {
 	    	if(e.getSource() == one) {
@@ -81,8 +84,25 @@ import javafx.scene.control.TextField;
 	    		cashScreen.setText(cashScreen.getText() + "0");
 	    	}
 	    }
-	    
-	    
+
+	    public void presetMoney(ActionEvent e){
+	    	if(e.getSource() == tenDollars)	{
+	    		money.setText((money.getText()) + "10");
+			}
+			if(e.getSource() == twentyDollars)	{
+				money.setText((money.getText()) + "20");
+	    	}
+	    	if(e.getSource() == fiftyDollars)	{
+				money.setText((money.getText()) + "50");
+	    	}
+	    	if(e.getSource() == oneHundredDollars) {
+				money.setText((money.getText()) + "100");
+			}
+		}
+
+	    public void setMoney(){
+			money.setText(cashScreen.getText() + money.getText());
+		}
 
 	    @FXML
 	    void initialize() {
