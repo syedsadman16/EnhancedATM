@@ -57,12 +57,17 @@ public class AccountScreenController {
 		Scene summary = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		InitScreenController controller = new InitScreenController();
+		//AcctSummaryController b = new AcctSummaryController();
 		AcctSummaryController n = loader.getController();
 		int pin	= Integer.parseInt(controller.creditCard.getText()); 
+		
 		Account acct = new Account(pin);
 		String i = acct.getName();
 		Label change = n.nameLabel;
+		
 		change.setText(i);
+		n.dispayBalance(pin);
+		
 		window.setScene(summary);
 		window.show();
 	}

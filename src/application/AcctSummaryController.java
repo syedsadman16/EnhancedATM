@@ -32,15 +32,34 @@ public class AcctSummaryController {
     private Button printBtn;
 
     
-    public void setName() {
-    	InitScreenController controller = new InitScreenController();
-    	int pin	= Integer.parseInt(controller.creditCard.getText()); 
-    	Account acct = new Account(pin);
-    	String name = acct.getName();
-    	nameLabel.setText(name);
+    
+    
+    //call this from previous screen to load it
+    public void dispayBalance(int pin) {
+    //	InitScreenController getPin = new InitScreenController();
+    	//int pin = Integer.parseInt(getPin.creditCard.getText());
+    	Account bal = new Account(pin);
+    	String setBal = Integer.toString(bal.getBalance());
+    	balLabel.setText(setBal);
+    }
+    public void displayName(int pin) {
     	
+    	Account nam = new Account(pin);
+    	String name = nam.getName();
+    	nameLabel.setText(name);
     }
     
+    public void displayWithdrawnAmt(String amt) {
+    	
+    	wthdwLabel.setText(amt);
+    }
+    
+    public void updateBal() {
+    	int b = Integer.parseInt(balLabel.getText());
+    	int w = Integer.parseInt(wthdwLabel.getText());
+    	String newbal = Integer.toString(b - w);
+    	newBalLabel.setText(newbal);
+    }
     
     @FXML
     void initialize() {

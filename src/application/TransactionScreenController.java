@@ -1,12 +1,18 @@
 package application;
-	import java.net.URL;
+	import java.io.IOException;
+import java.net.URL;
 	import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-	import javafx.scene.control.Button;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 	import javafx.scene.control.Label;
 	import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 	public class TransactionScreenController {
 
@@ -49,6 +55,8 @@ import javafx.fxml.FXML;
 	    private Button zero;
 	    @FXML
 	    private Button clearMoney;
+	    @FXML
+	    Button contBtn;
 	    @FXML
 	    private TextField cashScreen;
 	    @FXML
@@ -131,6 +139,27 @@ import javafx.fxml.FXML;
 	    
 	    public void resetCashField() {
 	    	cashScreen.setText("");
+	    }
+	    
+	    public void trasComplete(ActionEvent e) throws IOException {
+	    	
+	    	FXMLLoader loader = new FXMLLoader();
+	    	loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
+	    	Parent changeScenes = loader.load();
+	    	Scene transaction = new Scene(changeScenes);
+			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+			
+			InitScreenController controller = new InitScreenController();
+			AcctSummaryController n = loader.getController();
+			int pin	= Integer.parseInt(controller.creditCard.getText()); 
+
+			n.dispayBalance(pin);
+			n.displayName(pin);
+			n.displayWithdrawnAmt(money.getText());
+			n.updateBal();
+			
+			window.setScene(transaction);
+			window.show();
 	    	
 	    }
 
