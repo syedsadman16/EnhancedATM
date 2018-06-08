@@ -14,35 +14,37 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 	import javafx.stage.Stage;
 
-	public class LoginScreenController {		
-		 @FXML
-		    private ResourceBundle resources;
-		    @FXML
-		    private URL location;
-		    @FXML
-		    private Button one;
-		    @FXML
-		    private Button two;
-		    @FXML
-		    private Button three;
-		    @FXML
-		    private Button four;
-		    @FXML
-		    private Button five;
-		    @FXML
-		    private Button six;
-		    @FXML
-		    private Button seven;
-		    @FXML
-		    private Button eight;
-		    @FXML
-		    private Button nine;
-		    @FXML
-		    private Button zero;
-		    @FXML
-		    private TextField pinScreen;
+	public class LoginScreenController {	
+		
+	@FXML
+	private ResourceBundle resources;
+	@FXML
+	private URL location;
+	@FXML
+    private Button one;
+	@FXML
+	private Button two;
+	@FXML
+	private Button three;
+	@FXML
+	private Button four;
+	@FXML
+	private Button five;
+	@FXML
+	private Button six;
+	@FXML
+	private Button seven;
+    @FXML
+	private Button eight;
+	@FXML
+	private Button nine;
+	@FXML
+	private Button zero;
+	@FXML
+    private TextField pinScreen;
 		    
 		    public void buttonClicks(ActionEvent e) {
+		    	
 		    	if(e.getSource() == one) {
 		    		pinScreen.setText(pinScreen.getText() + "1");
 		    	}
@@ -73,8 +75,7 @@ import javafx.scene.control.TextField;
 		    	if(e.getSource() == zero) {
 		    		pinScreen.setText(pinScreen.getText() + "0");
 		    	}
-		    	
-		    	
+		    		
 		    }
 			
 		    public void login(ActionEvent event) throws IOException {
@@ -83,32 +84,26 @@ import javafx.scene.control.TextField;
 		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
 			Parent nextScene = loader.load();
 			Scene acctScreen = new Scene(nextScene);
-			//gets stage information to be set to preferred screen
 			Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			
 			InitScreenController controller = new InitScreenController();
 			AccountScreenController name = loader.getController(); //created controller instance
 			
-	//Retrieve methods from other scene such as getInfo() method
-		int pin	= Integer.parseInt(controller.creditCard.getText()); 
-			//int pin = controller.getPin();
+			name.setUserName();
+			int pin	= Integer.parseInt(controller.creditCard.getText()); 
 			Account acct = new Account(pin);
 			int num = acct.getPin();
-			String i = acct.getName();
-		    //Get info from account and set it to value of pin
-			Label change = name.nameLabel;
-			change.setText(i);
-		    
-		    	if(Integer.parseInt((pinScreen.getText())) == num) {
+			
+			if(Integer.parseInt((pinScreen.getText())) == num) {	
 		    		window.setScene(acctScreen);
 					window.show();
-					
 		    	}
 		   
 		   }
 
 		    @FXML
 		    void initialize() {
+		    	
 		        assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'InitScreen.fxml'.";
 		        assert two != null : "fx:id=\"two\" was not injected: check your FXML file 'InitScreen.fxml'.";
 		        assert three != null : "fx:id=\"three\" was not injected: check your FXML file 'InitScreen.fxml'.";
@@ -120,9 +115,10 @@ import javafx.scene.control.TextField;
 		        assert nine != null : "fx:id=\"nine\" was not injected: check your FXML file 'InitScreen.fxml'.";
 		        assert zero != null : "fx:id=\"zero\" was not injected: check your FXML file 'InitScreen.fxml'.";
 		        assert pinScreen != null : "fx:id=\"pinScreen\" was not injected: check your FXML file 'InitScreen.fxml'.";
+		        
 		    }
+		    
 
-		
 	}
 
 

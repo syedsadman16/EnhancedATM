@@ -71,6 +71,7 @@ import javafx.stage.Stage;
 	   int hundredCouter;  */
 	    
 	    public void buttonClicks(ActionEvent e) {
+	    	
 	    	if(e.getSource() == one) {
 	    		cashScreen.setText(cashScreen.getText() + "1");
 	    	}
@@ -101,9 +102,11 @@ import javafx.stage.Stage;
 	    	if(e.getSource() == zero) {
 	    		cashScreen.setText(cashScreen.getText() + "0");
 	    	}
+	    	
 	    }
 
 	    public void presetMoney(ActionEvent e){
+	    	
 	    	if(e.getSource() == tenDollars)	{
 	    		currency += 10;
 	    		money.setText("" + currency);
@@ -124,17 +127,22 @@ import javafx.stage.Stage;
 	    		currency = 0;
 	    		money.setText("" + currency);
 	    	}
+	    	
 		}
 	    
 	    public void combineCurrency() {
+	    	
 	    	if(money.getText().isEmpty()) {
 	    		money.setText(cashScreen.getText());
-	    	} else {
+	    	} 
+	    	
+	    	else {
 	    	int moneyField = Integer.parseInt(money.getText());
 	    	int cashField = Integer.parseInt(cashScreen.getText());
 	    	int total = moneyField + cashField;
 	    	money.setText("" + total);
 	    	}
+	    	
 	    }
 	    
 	    public void resetCashField() {

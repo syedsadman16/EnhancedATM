@@ -37,46 +37,52 @@ public class AccountScreenController {
     private Button signOutBtn; //goes to settings screen
     
     public void signOut(ActionEvent event) throws IOException {
+    	
 		Parent nextScene = FXMLLoader.load( getClass().getResource("/application/InitScreen.fxml") );
 		Scene mainScreen = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(mainScreen);
 		window.show();
+		
 	}
+    
     public void goToTransactionScreen(ActionEvent event) throws IOException {
+    	
 		Parent nextScene = FXMLLoader.load( getClass().getResource("/application/TransactionScreen.fxml") );
 		Scene withdraw = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(withdraw);
 		window.show();
+		
 	}
+    
     public void goToSummaryScreen(ActionEvent event) throws IOException {
-    	FXMLLoader loader= new FXMLLoader();
+    	
+    	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
 		Parent nextScene = loader.load();
 		Scene summary = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		
 		InitScreenController controller = new InitScreenController();
-		//AcctSummaryController b = new AcctSummaryController();
-		AcctSummaryController n = loader.getController();
+		AcctSummaryController n = loader.getController(); //get instance
 		int pin	= Integer.parseInt(controller.creditCard.getText()); 
-		
-		Account acct = new Account(pin);
-		String i = acct.getName();
-		Label change = n.nameLabel;
-		
-		change.setText(i);
+
+		n.displayName(pin);
 		n.dispayBalance(pin);
 		
 		window.setScene(summary);
 		window.show();
+		
 	}
     public void goToDepositScreen(ActionEvent event) throws IOException {
+    	
 		Parent nextScene = FXMLLoader.load( getClass().getResource("/application/DepositScreen.fxml") );
 		Scene deposit = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(deposit);
 		window.show();
+		
 	}
 
     public void setUserName() {
@@ -90,6 +96,7 @@ public class AccountScreenController {
     
     @FXML
     void initialize() {
+    	
         assert nameLabel != null : "fx:id=\"nameLabel\" was not injected: check your FXML file 'AccountScreen.fxml'.";
         assert wdrawBtn != null : "fx:id=\"wdrawBtn\" was not injected: check your FXML file 'AccountScreen.fxml'.";
         assert DepBtn != null : "fx:id=\"DepBtn\" was not injected: check your FXML file 'AccountScreen.fxml'.";

@@ -21,7 +21,7 @@
             <Button fx:id="wdrawBtn" layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onAction="#goToTransactionScreen" text="Withdraw" />
             <Button fx:id="DepBtn" layoutX="236.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToDepositScreen" text="Deposit" />
             <Button fx:id="asumBtn" layoutX="208.0" layoutY="392.0" mnemonicParsing="false" onAction="#goToSummaryScreen" text="Account Summary" />
-            <Button fx:id="signOutBtn" layoutX="235.0" layoutY="453.0" mnemonicParsing="false" onAction="#signOut" text="Settings" />
+            <Button fx:id="signOutBtn" layoutX="239.0" layoutY="509.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
          </children>
       </AnchorPane>
    </children>

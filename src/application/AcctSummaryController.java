@@ -34,35 +34,40 @@ public class AcctSummaryController {
     
     
     
-    //call this from previous screen to load it
     public void dispayBalance(int pin) {
-    //	InitScreenController getPin = new InitScreenController();
-    	//int pin = Integer.parseInt(getPin.creditCard.getText());
+    	
     	Account bal = new Account(pin);
     	String setBal = Integer.toString(bal.getBalance());
     	balLabel.setText(setBal);
+    	
     }
+    
     public void displayName(int pin) {
     	
     	Account nam = new Account(pin);
     	String name = nam.getName();
     	nameLabel.setText(name);
+    	
     }
     
     public void displayWithdrawnAmt(String amt) {
     	
     	wthdwLabel.setText(amt);
+    	
     }
     
     public void updateBal() {
+    	
     	int b = Integer.parseInt(balLabel.getText());
     	int w = Integer.parseInt(wthdwLabel.getText());
     	String newbal = Integer.toString(b - w);
     	newBalLabel.setText(newbal);
+    	
     }
     
     @FXML
     void initialize() {
+    	
         assert nameLabel != null : "fx:id=\"nameLabel\" was not injected: check your FXML file 'AcctSummaryScreen.fxml'.";
         assert balLabel != null : "fx:id=\"balLabel\" was not injected: check your FXML file 'AcctSummaryScreen.fxml'.";
         assert depLabel != null : "fx:id=\"depLabel\" was not injected: check your FXML file 'AcctSummaryScreen.fxml'.";
