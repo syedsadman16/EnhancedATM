@@ -56,20 +56,20 @@ public class AccountScreenController {
 		
 	}
     
-    public void goToSummaryScreen(ActionEvent event) throws IOException {
+    public void goToBalanceScreen(ActionEvent event) throws IOException {
     	
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
+    	loader.setLocation(getClass().getResource("/application/BalanceHistory.fxml"));
 		Parent nextScene = loader.load();
 		Scene summary = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		
 		InitScreenController controller = new InitScreenController();
-		AcctSummaryController n = loader.getController(); //get instance
+		BalanceHistoryController n = loader.getController(); //get instance
 		int pin	= Integer.parseInt(controller.creditCard.getText()); 
 
-		n.displayName(pin);
-		n.dispayBalance(pin);
+	//	n.displayName(pin);
+	//	n.dispayBalance(pin);
 		
 		window.setScene(summary);
 		window.show();
