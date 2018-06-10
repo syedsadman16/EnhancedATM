@@ -15,22 +15,17 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 	public class TransactionScreenController {
-
+		public static TransactionScreenController classAInstance = new TransactionScreenController();
 	    @FXML
 	    private ResourceBundle resources;
-
 	    @FXML
 	    private URL location;
-
 	    @FXML
 	    private Button tenDollars;
-
 	    @FXML
 	    private Button twentyDollars;
-
 	    @FXML
 	    private Button fiftyDollars;
-
 	    @FXML
 	    private Button oneHundredDollars;
 	    @FXML
@@ -60,9 +55,14 @@ import javafx.stage.Stage;
 	    @FXML
 	    private TextField cashScreen;
 	    @FXML
-	    private Label money; 
-	    int currency;
-	    
+	    Label money; 
+	    String curr;
+	    int currency;	    
+	    int holder;
+	    @FXML
+	    Label tst;
+	    Button button;
+	    BankData bank = new BankData();
 	    
 	   /* Add counters to keep track of types of bills; remove bills
 	   int tenCounter;
@@ -74,33 +74,43 @@ import javafx.stage.Stage;
 	    	
 	    	if(e.getSource() == one) {
 	    		cashScreen.setText(cashScreen.getText() + "1");
+	    		curr = "1";
 	    	}
 	    	if(e.getSource() == two) {
 	    		cashScreen.setText(cashScreen.getText() + "2");
+	    		curr += "2";
 	    	}
 	    	if(e.getSource() == three) {
 	    		cashScreen.setText(cashScreen.getText() + "3");
+	    		curr += "3";
 	    	}
 	    	if(e.getSource() == four) {
 	    		cashScreen.setText(cashScreen.getText() + "4");
+	    		curr += "4";
 	    	}
 	    	if(e.getSource() == five) {
 	    		cashScreen.setText(cashScreen.getText() + "5");
+	    		curr += "5";
 	    	}
 	    	if(e.getSource() == six) {
 	    		cashScreen.setText(cashScreen.getText() + "6");
+	    		curr += "6";
 	    	}
 	    	if(e.getSource() == seven) {
 	    		cashScreen.setText(cashScreen.getText() + "7");
+	    		curr += "7";
 	    	}
 	    	if(e.getSource() == eight) {
 	    		cashScreen.setText(cashScreen.getText() + "8");
+	    		curr += "8";
 	    	}
 	    	if(e.getSource() == nine) {
 	    		cashScreen.setText(cashScreen.getText() + "9");
+	    		curr += "9";
 	    	}
 	    	if(e.getSource() == zero) {
 	    		cashScreen.setText(cashScreen.getText() + "0");
+	    		curr += "0";
 	    	}
 	    	
 	    }
@@ -108,24 +118,24 @@ import javafx.stage.Stage;
 	    public void presetMoney(ActionEvent e){
 	    	
 	    	if(e.getSource() == tenDollars)	{
-	    		currency += 10;
-	    		money.setText("" + currency);
+	    		this.currency += 10;
+	    		money.setText(Integer.toString(currency));
 			}
 			if(e.getSource() == twentyDollars)	{
-				currency += 20;
-				money.setText("" + currency);
+				this.currency += 20;
+	    		money.setText(Integer.toString(currency));
 	    	}
 	    	if(e.getSource() == fiftyDollars)	{
-	    		currency += 50;	    	
-	    		money.setText("" + currency);
+	    		this.currency += 50;	    	
+	    		money.setText(Integer.toString(currency));
 	    	}
 	    	if(e.getSource() == oneHundredDollars) {
-	    		currency += 100;
-	    		money.setText("" + currency);
+	    		this.currency += 100;
+	    		money.setText(Integer.toString(currency));
 			}
 	    	if(e.getSource() == clearMoney) {
-	    		currency = 0;
-	    		money.setText("" + currency);
+	    		this.currency = 0;
+	    		money.setText(Integer.toString(currency));
 	    	}
 	    	
 		}
@@ -133,38 +143,56 @@ import javafx.stage.Stage;
 	    public void combineCurrency() {
 	    	
 	    	if(money.getText().isEmpty()) {
-	    		money.setText(cashScreen.getText());
+	    		money.setText(cashScreen.getText());		    
 	    	} 
 	    	
 	    	else {
 	    	int moneyField = Integer.parseInt(money.getText());
 	    	int cashField = Integer.parseInt(cashScreen.getText());
 	    	int total = moneyField + cashField;
-	    	money.setText("" + total);
+	    	String t = Integer.toString(total);
+	    	money.setText(t);
+	    	
 	    	}
 	    	
 	    }
+	 
 	    
 	    public void resetCashField() {
 	    	cashScreen.setText("");
+
 	    }
 	    
+	   
+	    
+	    public void confirmation() {
+	    	holder = Integer.parseInt(money.getText());  
+	    	tst.setText(Integer.toString(holder));
+	    	changeIt(holder);
+	    }
+	    
+	    public int changeIt(int aholder) { 
+	    	  holder = aholder; 
+	    	  return holder;
+	    	}
+	    
 	    public void trasComplete(ActionEvent e) throws IOException {
-	    	
+	    	/* Preference
+	    	holder = Integer.parseInt(money.getText());  
+	    	tst.setText(Integer.toString(holder));
+	    	changeIt(holder);
+	    	*/
 	    	FXMLLoader loader = new FXMLLoader();
-	    	loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
+	    	loader.setLocation(getClass().getResource("/application/SecurityScreen.fxml"));
 	    	Parent changeScenes = loader.load();
 	    	Scene transaction = new Scene(changeScenes);
 			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
 			
-			InitScreenController controller = new InitScreenController();
-			AcctSummaryController n = loader.getController();
-			int pin	= Integer.parseInt(controller.creditCard.getText()); 
-
-			n.dispayBalance(pin);
-			n.displayName(pin);
-			n.displayWithdrawnAmt(money.getText());
-			n.updateBal();
+			
+			SecrurityScreenController controller = loader.getController();
+			controller.withdrawal(holder); 
+			//AcctSummaryController controller = loader.getController();
+			//controller.withdrawal(holder);
 			
 			window.setScene(transaction);
 			window.show();

@@ -2,11 +2,12 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class AcctSummaryController {
-
+	
     @FXML
     private ResourceBundle resources;
 
@@ -23,7 +24,7 @@ public class AcctSummaryController {
     private Label depLabel;
 
     @FXML
-    private Label wthdwLabel;
+    Label wthdwLabel;
 
     @FXML
     private Label newBalLabel;
@@ -31,8 +32,8 @@ public class AcctSummaryController {
     @FXML
     private Button printBtn;
 
-    
-    
+
+      
     
     public void dispayBalance(int pin) {
     	
@@ -50,9 +51,9 @@ public class AcctSummaryController {
     	
     }
     
-    public void displayWithdrawnAmt(String amt) {
-    	
-    	wthdwLabel.setText(amt);
+    public void withdrawal(int holder) {
+    	String lab = Integer.toString(holder);
+    	wthdwLabel.setText(lab);
     	
     }
     

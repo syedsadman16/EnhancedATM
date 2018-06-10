@@ -3,6 +3,8 @@ package application;
 public class BankData {
 	Object[][] arr = new Object[10][10];
 	int index;
+	int bankBalance = 1000;
+	TransactionScreenController b;
 	
 	public BankData() {
 	   arr[0][0] = "Syed Sadman"; //name 
@@ -80,6 +82,14 @@ public String findEmail(int n) {
 	String email = (String) arr[index][4];
 	return email;
 }
+
+	public void addBankBalance(int n) {
+		bankBalance += n;
+	}
+	
+	public void deductBankBalance(int n) {
+		bankBalance -= n;
+	}
 
 	public void addString(int x, int y, String content) {
 
