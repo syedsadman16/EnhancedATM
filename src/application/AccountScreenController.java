@@ -17,24 +17,19 @@ public class AccountScreenController {
 
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     Label nameLabel; //Just gets the name 
-
     @FXML
     private Button wdrawBtn; //transaction screen
-
     @FXML
     private Button DepBtn; //goes to new deposit screen
-
     @FXML
     private Button asumBtn; //generate acct summary
-
     @FXML
     private Button signOutBtn; //goes to settings screen
+    private BankData bank = BankData.getInstance();
     
     public void signOut(ActionEvent event) throws IOException {
     	

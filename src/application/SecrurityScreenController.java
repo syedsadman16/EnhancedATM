@@ -44,6 +44,8 @@ public class SecrurityScreenController {
     private TextField screen;
 	int holder;
 	
+	public BankData bank = BankData.getInstance();
+	
 	public void buttonClicks(ActionEvent e) {
 		    	
 		if(e.getSource() == one) {
@@ -102,7 +104,8 @@ public class SecrurityScreenController {
 	
 		AcctSummaryController control = loader.getController();
 		control.withdrawal(holder);
-			
+		control.updateBal();
+		
 		Account acct = new Account(pin);
 		int num = acct.getPin();	
 		

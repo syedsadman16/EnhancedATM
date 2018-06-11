@@ -160,11 +160,8 @@ import javafx.stage.Stage;
 	    
 	    public void resetCashField() {
 	    	cashScreen.setText("");
-
 	    }
-	    
-	   
-	    
+	        
 	    public void confirmation() {
 	    	holder = Integer.parseInt(money.getText());  
 	    	tst.setText(Integer.toString(holder));
@@ -174,7 +171,7 @@ import javafx.stage.Stage;
 	    public int changeIt(int aholder) { 
 	    	  holder = aholder; 
 	    	  return holder;
-	    	}
+	    }
 	    
 	    public void trasComplete(ActionEvent e) throws IOException {
 	    	/* Preference

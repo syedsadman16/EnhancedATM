@@ -1,7 +1,6 @@
 package application;
 
 public class Account {
-	
 	BankData data;
 	
 	String name;
@@ -17,25 +16,25 @@ public class Account {
 	
 	
 	public int getPin() {
-		data = new BankData();
+		data = BankData.getInstance();
 		pinNum = data.findPin(accountNum);
 		return pinNum;
 	}
 
 	public int getBalance() {
-		data = new BankData();
+		data  = BankData.getInstance();
 		balance = data.findBalance(accountNum);
 		return balance;
 	}
 	
 	public String getName() {
-		data = new BankData();
+		data = BankData.getInstance();
 		name = data.findName(accountNum);
 		return name;
 	}
 	
 	public String getEmail() {
-		data = new BankData();
+		data = BankData.getInstance();
 		email =  data.findEmail(accountNum);
 		return email;
 	}

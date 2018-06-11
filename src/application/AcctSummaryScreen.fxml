@@ -18,7 +18,7 @@
             <Label fx:id="wthdwLabel" layoutX="133.0" layoutY="262.0" text="Label" />
             <Label layoutX="62.0" layoutY="355.0" prefHeight="17.0" prefWidth="41.0" text="Balance" />
             <Label fx:id="newBalLabel" layoutX="119.0" layoutY="355.0" text="Label" />
-            <Button fx:id="printBtn" layoutX="231.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="printBtn" layoutX="231.0" layoutY="473.0" mnemonicParsing="false" onAction="#updateGlobalBal" text="Button" />
          </children>
       </AnchorPane>
    </children>

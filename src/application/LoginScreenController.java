@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 
 	public class LoginScreenController {	
 		
+	BankData bank = BankData.getInstance();	
 	@FXML
 	private ResourceBundle resources;
 	@FXML

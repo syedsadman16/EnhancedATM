@@ -1,7 +1,13 @@
 package application;
 
 public class BankData {
-	Object[][] arr = new Object[10][10];
+    public static final BankData INSTANCE = new BankData();
+
+    public static BankData getInstance() {
+        return INSTANCE;
+    }
+    
+	public Object[][] arr = new Object[10][10];
 	int index;
 	int bankBalance = 1000;
 	TransactionScreenController b;
@@ -101,5 +107,7 @@ public String findEmail(int n) {
 		arr[x][y] = content;
 		
 	}
+
+	
 	   
 }
