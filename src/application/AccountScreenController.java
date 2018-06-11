@@ -63,8 +63,9 @@ public class AccountScreenController {
 		BalanceHistoryController n = loader.getController(); //get instance
 		int pin	= Integer.parseInt(controller.creditCard.getText()); 
 
-	//	n.displayName(pin);
-	//	n.dispayBalance(pin);
+		n.displayName(pin);
+		n.dispayBalance(pin);
+		n.balHistory();
 		
 		window.setScene(summary);
 		window.show();

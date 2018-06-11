@@ -41,7 +41,7 @@ public class AcctSummaryController {
     	Account bal = new Account(pin);
     	String setBal = Integer.toString(bal.getBalance());
     	balLabel.setText(setBal);
-    	
+    	bank.blc.add(Integer.parseInt(balLabel.getText()));
     }
     
     public void displayName(int pin) {
@@ -75,10 +75,14 @@ public class AcctSummaryController {
    			Parent nextScene = loader.load();
    			Scene acctScreen = new Scene(nextScene);
    			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+   			AccountScreenController scrn = loader.getController();
+   			scrn.setUserName();
    			window.setScene(acctScreen);
    			window.show();
     	}
     }
+    
+
     
     
     @FXML

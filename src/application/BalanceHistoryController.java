@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 
 public class BalanceHistoryController {
 
+	public BankData h = BankData.getInstance();
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -26,8 +27,53 @@ public class BalanceHistoryController {
     private Label hist5;
     @FXML
     private Label currentbalance;
+    @FXML
+    private Label nameLabel;
 
+    public void dispayBalance(int pin) {
+    	
+    	Account bal = new Account(pin);
+    	String setBal = Integer.toString(bal.getBalance());
+    	currentbalance.setText(setBal);
+    	
+    }
     
+    public void displayName(int pin) {
+    	
+    	Account nam = new Account(pin);
+    	String name = nam.getName();
+    	nameLabel.setText(name);
+    	
+    }
+    
+    public void balHistory() {
+    	int i = h.blc.size() -1;
+    	
+    	if(h.blc.size() > 3) {
+    	hist1.setText(Integer.toString(h.blc.get(h.blc.size()-4)));
+    	hist2.setText(Integer.toString(h.blc.get(h.blc.size()-3)));
+    	hist3.setText(Integer.toString(h.blc.get(h.blc.size()-2)));
+    	hist4.setText(Integer.toString(h.blc.get(h.blc.size()-1)));
+    	hist5.setText(Integer.toString(h.blc.get(i)));
+    	}
+    	else if(h.blc.size() > 2) {
+    	hist2.setText(Integer.toString(h.blc.get(h.blc.size()-3)));
+    	hist3.setText(Integer.toString(h.blc.get(h.blc.size()-2)));
+    	hist4.setText(Integer.toString(h.blc.get(h.blc.size()-1)));
+    	hist5.setText(Integer.toString(h.blc.get(i)));
+    	} 
+    	else if(h.blc.size() > 1) {
+    	hist3.setText(Integer.toString(h.blc.get(h.blc.size()-2)));
+    	hist4.setText(Integer.toString(h.blc.get(h.blc.size()-1)));
+    	hist5.setText(Integer.toString(h.blc.get(i)));
+    	} else if(h.blc.size() > 0) {
+    	hist4.setText(Integer.toString(h.blc.get(h.blc.size()-1)));
+    	hist5.setText(Integer.toString(h.blc.get(i)));
+    	}
+    	if(h.blc.size() <= 0)
+    	hist5.setText(Integer.toString(h.blc.get(i)));
+    	
+    }
     
     
     

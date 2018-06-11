@@ -184,12 +184,9 @@ import javafx.stage.Stage;
 	    	Parent changeScenes = loader.load();
 	    	Scene transaction = new Scene(changeScenes);
 			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
-			
-			
+						
 			SecrurityScreenController controller = loader.getController();
 			controller.withdrawal(holder); 
-			//AcctSummaryController controller = loader.getController();
-			//controller.withdrawal(holder);
 			
 			window.setScene(transaction);
 			window.show();

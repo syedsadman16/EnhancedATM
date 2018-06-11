@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 public class BankData {
     public static final BankData INSTANCE = new BankData();
 
@@ -8,6 +10,7 @@ public class BankData {
     }
     
 	public Object[][] arr = new Object[10][10];
+	public ArrayList<Integer> blc = new ArrayList<Integer>();
 	int index;
 	int bankBalance = 1000;
 	TransactionScreenController b;
