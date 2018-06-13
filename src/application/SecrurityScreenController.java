@@ -104,6 +104,7 @@ public class SecrurityScreenController {
 	
 		AcctSummaryController control = loader.getController();
 		control.withdrawal(holder);
+		control.deposit(0);
 		control.updateBal();
 		
 		Account acct = new Account(pin);

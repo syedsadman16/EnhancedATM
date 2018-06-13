@@ -156,8 +156,7 @@ import javafx.stage.Stage;
 	    	}
 	    	
 	    }
-	 
-	    
+	 	    
 	    public void resetCashField() {
 	    	cashScreen.setText("");
 	    }

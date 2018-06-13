@@ -32,8 +32,7 @@ public class AcctSummaryController {
     private Label newBalLabel;
     @FXML
     private Button printBtn;
-    @FXML 
-
+   
       
     
     public void dispayBalance(int pin) {
@@ -41,7 +40,7 @@ public class AcctSummaryController {
     	Account bal = new Account(pin);
     	String setBal = Integer.toString(bal.getBalance());
     	balLabel.setText(setBal);
-    	bank.blc.add(Integer.parseInt(balLabel.getText()));
+    	bank.blc.add(Integer.parseInt(balLabel.getText())); //to keep track of balances
     }
     
     public void displayName(int pin) {
@@ -57,12 +56,18 @@ public class AcctSummaryController {
     	wthdwLabel.setText(lab);
     	
     }
+    
+    public void deposit(int store) {
+		String s = Integer.toString(store);
+		depLabel.setText(s);
+	}
      
     public void updateBal() {
     	
     	int b = Integer.parseInt(balLabel.getText());
     	int w = Integer.parseInt(wthdwLabel.getText());
-    	String newbal = Integer.toString(b - w);
+    	int d = Integer.parseInt(depLabel.getText());
+    	String newbal = Integer.toString((b - w) + d );
     	newBalLabel.setText(newbal);
     	
     }
@@ -96,5 +101,7 @@ public class AcctSummaryController {
         assert printBtn != null : "fx:id=\"printBtn\" was not injected: check your FXML file 'AcctSummaryScreen.fxml'.";
 
     }
+
+	
 }
 
