@@ -17,6 +17,7 @@
             <Label fx:id="totalMoney" layoutX="129.0" layoutY="269.0" text="Label" />
             <Button fx:id="Confirm" layoutX="392.0" layoutY="338.0" mnemonicParsing="false" onAction="#transactionScreen" text="Button" />
             <Label fx:id="countLabel" layoutX="115.0" layoutY="355.0" text="Label" />
+            <Button layoutX="559.0" layoutY="158.0" mnemonicParsing="false" onAction="#back" text="Back" />
          </children>
       </AnchorPane>
    </children>

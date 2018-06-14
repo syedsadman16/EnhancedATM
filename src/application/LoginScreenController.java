@@ -1,20 +1,21 @@
-	package application;
-	import java.io.IOException;
-	import java.net.URL;
-	import java.util.ResourceBundle;
+package application;
 
-	import javafx.event.ActionEvent;
-	import javafx.fxml.FXML;
-	import javafx.fxml.FXMLLoader;
-	import javafx.scene.Node;
-	import javafx.scene.Parent;
-	import javafx.scene.Scene;
-	import javafx.scene.control.Button;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-	import javafx.stage.Stage;
+import javafx.stage.Stage;
 
-	public class LoginScreenController {	
+public class LoginScreenController {	
 		
 	BankData bank = BankData.getInstance();	
 	@FXML
@@ -43,7 +44,15 @@ import javafx.scene.control.TextField;
 	private Button zero;
 	@FXML
     private TextField pinScreen;
-		    
+	@FXML
+	private Button Clear;
+	@FXML
+	private Button Back;
+	@FXML
+	private Button Cancel;
+		
+
+		    @FXML
 		    public void buttonClicks(ActionEvent e) {
 		    	
 		    	if(e.getSource() == one) {
@@ -76,9 +85,16 @@ import javafx.scene.control.TextField;
 		    	if(e.getSource() == zero) {
 		    		pinScreen.setText(pinScreen.getText() + "0");
 		    	}
+		    	if(e.getSource() == Back) {
+		    		pinScreen.setText("" + pinScreen.getText().substring(0, pinScreen.getText().length() - 1));
+		    	}
+		    	if(e.getSource() == Clear) {
+		    		pinScreen.setText("");
+		    	}
 		    		
 		    }
 			
+		    @FXML
 		    public void login(ActionEvent event) throws IOException {
 				
 		    FXMLLoader loader = new FXMLLoader();
@@ -101,6 +117,16 @@ import javafx.scene.control.TextField;
 		    	}
 		   
 		   }
+		    
+		    @FXML
+		    public void cancel(ActionEvent e ) throws IOException {	  
+		    	
+		    	Parent nextScene = FXMLLoader.load( getClass().getResource("/application/InitScreen.fxml") );
+				Scene mainScreen = new Scene(nextScene);
+				Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+				window.setScene(mainScreen);
+				window.show();			    		    	
+		    }
 
 		    @FXML
 		    void initialize() {
@@ -121,6 +147,3 @@ import javafx.scene.control.TextField;
 		    
 
 	}
-
-
-

@@ -173,11 +173,6 @@ import javafx.stage.Stage;
 	    }
 	    
 	    public void trasComplete(ActionEvent e) throws IOException {
-	    	/* Preference
-	    	holder = Integer.parseInt(money.getText());  
-	    	tst.setText(Integer.toString(holder));
-	    	changeIt(holder);
-	    	*/
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("/application/SecurityScreen.fxml"));
 	    	Parent changeScenes = loader.load();
@@ -190,6 +185,16 @@ import javafx.stage.Stage;
 			window.setScene(transaction);
 			window.show();
 	    	
+	    }
+	    
+	    public void goBack(ActionEvent e) throws IOException {
+	    	FXMLLoader loader = new FXMLLoader();
+   		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
+   			Parent nextScene = loader.load();
+   			Scene acctScreen = new Scene(nextScene);
+   			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+   			window.setScene(acctScreen);
+   			window.show();
 	    }
 
 	    @FXML

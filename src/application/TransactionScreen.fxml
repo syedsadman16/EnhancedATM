@@ -10,7 +10,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TransactionScreenController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="600.0">
+      <AnchorPane fx:id="Back" prefHeight="600.0" prefWidth="600.0">
          <children>
             <Button fx:id="tenDollars" layoutX="82.0" layoutY="342.0" mnemonicParsing="false" onAction="#presetMoney" text="10" />
             <Button fx:id="twentyDollars" layoutX="152.0" layoutY="342.0" mnemonicParsing="false" onAction="#presetMoney" text="20" />
@@ -52,6 +52,7 @@
             <Button fx:id="button" layoutX="175.0" layoutY="552.0" mnemonicParsing="false" onAction="#confirmation" text="Button" />
             <Label layoutX="24.0" layoutY="494.0" text="money --&gt;" />
             <Label layoutX="24.0" layoutY="547.0" text="holder --&gt;" />
+            <Button fx:id="Back" layoutX="380.0" layoutY="552.0" mnemonicParsing="false" onAction="#goBack" text="Button" />
          </children>
       </AnchorPane>
    </children>

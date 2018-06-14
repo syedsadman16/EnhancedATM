@@ -111,10 +111,20 @@ public class DepositScreenController {
 		n.updateBal();
 		
 		window.setScene(transaction);
-		window.show();
-    	
+		window.show();   	
     	
     }
+    
+    public void back(ActionEvent e) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
+			Parent nextScene = loader.load();
+			Scene acctScreen = new Scene(nextScene);
+			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+			window.setScene(acctScreen);
+			window.show();
+    }
+
     
     
     

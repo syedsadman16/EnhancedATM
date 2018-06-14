@@ -1,10 +1,18 @@
 
 package application;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class BalanceHistoryController {
 
@@ -75,7 +83,16 @@ public class BalanceHistoryController {
     	
     }
     
-    
+    public void back(ActionEvent e) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
+			Parent nextScene = loader.load();
+			Scene acctScreen = new Scene(nextScene);
+			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+			window.setScene(acctScreen);
+			window.show();
+    }
+
     
     
     

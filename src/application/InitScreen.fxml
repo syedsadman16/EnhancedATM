@@ -29,7 +29,7 @@
                   <Image url="@../Pictures/cardSlot.PNG" />
                </image>
             </ImageView>
-            <Button fx:id="creditCard" layoutX="367.0" layoutY="420.0" mnemonicParsing="false" onAction="#changeInitScene" prefHeight="128.0" prefWidth="223.0" rotate="-60.6" style="-fx-background-image: url('/Pictures/CreditCard.PNG'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: 200;" stylesheets="@application.css" />
+            <Button fx:id="creditCard" layoutX="384.0" layoutY="403.0" mnemonicParsing="false" onAction="#changeInitScene" prefHeight="121.0" prefWidth="200.0" rotate="-60.6" style="-fx-background-image: url('/Pictures/CreditCard.PNG'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: 200;" stylesheets="@application.css" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="SRC_ATOP" fill="#5a7d90" height="83.0" layoutX="62.0" layoutY="612.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f4346" height="11.0" layoutX="62.0" layoutY="648.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111111" height="33.0" layoutX="135.0" layoutY="572.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />

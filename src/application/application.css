@@ -1,29 +1,35 @@
 .concrete {
-
-
-   -fx-background: #95a5a6;
-
-   -fx-border-radius: 6px;
-
-   -fx-color: white;
-  -fx-padding: 10px;
-
-   -fx-font-size: 12px;
-   -fx-font-weight: 800;
+   -fx-background:  #003554;
+   -fx-color:  #003554;
+    -fx-padding: 5;
+    -fx-border-style: none;
+    -fx-border-insets: 0;
+    -fx-border-width: 0;
+    -fx-border-color: none;
 }
 
 .concrete:hover {
    -fx-opacity: 0.8;
+   -fx-color: #00A6FB;
 }
 
-.concrete:active {
 
-   -fx-background: #8A9C9D;
 
-   -fx-border-radius: 6px;
+.rose {
+   -fx-background: #C81D25;
+   -fx-border-radius: 0px;
+   -fx-color: #C81D25;
+}
 
+.rose:hover {
+   -fx-opacity: 0.8;
+   -fx-color: #FF5A5F;
+}
+
+.rose:active {
+   -fx-background: #C81D25;
+   -fx-border-radius: 0px;
    -fx-color: white;
    -fx-padding: 10px;
-
 }
 
