@@ -1,2 +1,29 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.concrete {
+
+
+   -fx-background: #95a5a6;
+
+   -fx-border-radius: 6px;
+
+   -fx-color: white;
+  -fx-padding: 10px;
+
+   -fx-font-size: 12px;
+   -fx-font-weight: 800;
+}
+
+.concrete:hover {
+   -fx-opacity: 0.8;
+}
+
+.concrete:active {
+
+   -fx-background: #8A9C9D;
+
+   -fx-border-radius: 6px;
+
+   -fx-color: white;
+   -fx-padding: 10px;
+
+}
 

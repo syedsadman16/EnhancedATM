@@ -17,7 +17,7 @@ public class InitScreenController {
 	
     @FXML 
     Button creditCard = new Button("123456789");
-	
+    
 	    
 	@FXML
 	public void changeInitScene(ActionEvent event) throws IOException {
@@ -32,7 +32,8 @@ public class InitScreenController {
 	 
 	    @FXML
 	    void initialize() {
-	    	
+	
+	    	    
 	    }
 
 	
