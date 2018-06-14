@@ -81,39 +81,58 @@ public class SecrurityScreenController {
 		    		
 	}
 	
-	 public void withdrawal(int aholder) {
-	  
-	    	holder = aholder;
-	    	
+	 public void withdrawal(int aholder) {	  
+		 holder = aholder;	    	
+	    }
+	 
+	 public int reverseNumber(int number){      
+	        int reverse = 0;
+	        while(number != 0){
+	            reverse = (reverse * 10)+(number % 10);
+	            number = number/10;
+	        } 
+	        return reverse;
 	    }
 	 
 	public void toAcctSummary(ActionEvent e) throws IOException {
 		
-		FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
-    	Parent changeScenes = loader.load();
-    	Scene transaction = new Scene(changeScenes);
-		Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+	    
+			FXMLLoader loader = new FXMLLoader();
+
+	    	Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+			InitScreenController controller = new InitScreenController();
+			int pin	= Integer.parseInt(controller.creditCard.getText()); 
+			Account acct = new Account(pin);
+			int num = acct.getPin();	
+			if(Integer.parseInt((screen.getText())) == num) {	
+				loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
+				Parent changeScenes = loader.load();
+				AcctSummaryController n = loader.getController();
+				n.dispayBalance(pin);
+				n.displayName(pin);
+			
+				AcctSummaryController control = loader.getController();
+				control.withdrawal(holder);
+				control.deposit(0);
+				control.updateBal();
+				
+		    	Scene transaction = new Scene(changeScenes);			
+	    		window.setScene(transaction);
+				window.show();
+	    	} 
+			
+			else if( Integer.parseInt((screen.getText())) == reverseNumber(num) ) {
+	    		loader.setLocation(getClass().getResource("/application/FakeScreen.fxml"));
+	    		Parent changeScenes = loader.load();   		
+	    	
+	    		
+		    	Scene transaction = new Scene(changeScenes);			
+	    		window.setScene(transaction);
+				window.show();
+	    	}
 		
-		InitScreenController controller = new InitScreenController();
-		int pin	= Integer.parseInt(controller.creditCard.getText()); 
-		
-		AcctSummaryController n = loader.getController();
-		n.dispayBalance(pin);
-		n.displayName(pin);
-	
-		AcctSummaryController control = loader.getController();
-		control.withdrawal(holder);
-		control.deposit(0);
-		control.updateBal();
-		
-		Account acct = new Account(pin);
-		int num = acct.getPin();	
-		
-		if(Integer.parseInt((screen.getText())) == num) {	
-    		window.setScene(transaction);
-			window.show();
-    	}
+			
+			
 		
 	}
 	
