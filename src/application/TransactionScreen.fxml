@@ -3,21 +3,27 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TransactionScreenController">
    <children>
-      <AnchorPane fx:id="Back" prefHeight="600.0" prefWidth="600.0">
+      <AnchorPane fx:id="Back" layoutX="7.0" layoutY="-7.0" prefHeight="649.0" prefWidth="831.0">
          <children>
-            <Button fx:id="tenDollars" layoutX="82.0" layoutY="342.0" mnemonicParsing="false" onAction="#presetMoney" text="10" />
-            <Button fx:id="twentyDollars" layoutX="152.0" layoutY="342.0" mnemonicParsing="false" onAction="#presetMoney" text="20" />
-            <Button fx:id="fiftyDollars" layoutX="152.0" layoutY="398.0" mnemonicParsing="false" onAction="#presetMoney" text="50" />
-          <Button fx:id="oneHundredDollars" layoutX="82.0" layoutY="398.0" mnemonicParsing="false" onAction="#presetMoney" text="100" />
-            <TextField fx:id="cashScreen" editable="false" layoutX="312.0" layoutY="157.0" prefHeight="69.0" prefWidth="162.0" />
-            <GridPane layoutX="268.0" layoutY="223.0" prefHeight="174.0" prefWidth="262.0">
+            <AnchorPane layoutX="52.0" layoutY="85.0" prefHeight="495.0" prefWidth="771.0" style="-fx-background-color: #006494;" />
+            <ImageView fitHeight="659.0" fitWidth="904.0" layoutX="-16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/tablet.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="cashScreen" editable="false" layoutX="490.0" layoutY="136.0" prefHeight="69.0" prefWidth="262.0" />
+            <GridPane layoutX="490.0" layoutY="213.0" prefHeight="174.0" prefWidth="262.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,7 +36,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="one" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="72.0" prefWidth="155.0" text="1" />
+                  <Button fx:id="one" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="165.0" prefWidth="100.0" text="1" />
                   <Button fx:id="four" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="96.0" prefWidth="205.0" text="4" GridPane.rowIndex="1" />
                   <Button fx:id="seven" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="80.0" prefWidth="154.0" text="7" GridPane.rowIndex="2" />
                   <Button fx:id="two" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="72.0" prefWidth="162.0" text="2" GridPane.columnIndex="1" />
@@ -40,19 +46,64 @@
                   <Button fx:id="six" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="90.0" prefWidth="146.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Button fx:id="zero" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="71.0" prefWidth="201.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Button fx:id="nine" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="63.0" prefWidth="146.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button fx:id="enterAmt" mnemonicParsing="false" onAction="#combineCurrency" prefHeight="58.0" prefWidth="122.0" text="Enter" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Button fx:id="clearText" mnemonicParsing="false" onAction="#resetCashField" prefHeight="67.0" prefWidth="143.0" text="Clear" GridPane.rowIndex="3" />
+                  <Button fx:id="enterAmt" mnemonicParsing="false" onAction="#combineCurrency" prefHeight="58.0" prefWidth="122.0" text="Enter" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Label fx:id="money" layoutX="152.0" layoutY="490.0" prefHeight="25.0" prefWidth="97.0" text="0" />
-            <Label layoutX="83.0" layoutY="494.0" text="Withdraw $" />
-            <Button fx:id="clearMoney" layoutX="118.0" layoutY="446.0" mnemonicParsing="false" onAction="#presetMoney" text="Clear" />
-            <Button fx:id="contBtn" layoutX="373.0" layoutY="511.0" mnemonicParsing="false" onAction="#trasComplete" text="Continue" />
-            <Label fx:id="tst" layoutX="97.0" layoutY="547.0" text="Label" />
-            <Button fx:id="button" layoutX="175.0" layoutY="552.0" mnemonicParsing="false" onAction="#confirmation" text="Button" />
-            <Label layoutX="24.0" layoutY="494.0" text="money --&gt;" />
-            <Label layoutX="24.0" layoutY="547.0" text="holder --&gt;" />
-            <Button fx:id="Back" layoutX="380.0" layoutY="552.0" mnemonicParsing="false" onAction="#goBack" text="Button" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="110.0" layoutX="612.0" layoutY="452.0" stroke="#003554" strokeType="INSIDE" width="183.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="83.0" layoutX="287.0" layoutY="216.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="110.0" layoutX="478.0" layoutY="452.0" stroke="#003554" strokeType="INSIDE" width="143.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="83.0" layoutX="140.0" layoutY="308.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="83.0" layoutX="140.0" layoutY="216.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="83.0" layoutX="287.0" layoutY="308.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="69.0" layoutX="122.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="317.0" />
+            <Label fx:id="money" layoutX="290.0" layoutY="128.0" prefHeight="25.0" prefWidth="97.0" text="0" textFill="#73ee3a">
+               <font>
+                  <Font size="31.0" />
+               </font></Label>
+            <Label layoutX="132.0" layoutY="134.0" prefHeight="33.0" prefWidth="143.0" text="Withdraw $" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="23.0" />
+               </font></Label>
+            <Button fx:id="tenDollars" layoutX="150.0" layoutY="228.0" mnemonicParsing="false" onAction="#presetMoney" prefHeight="59.0" prefWidth="106.0" style="-fx-background-color: #003554;" text="10" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="twentyDollars" layoutX="301.0" layoutY="228.0" mnemonicParsing="false" onAction="#presetMoney" prefHeight="59.0" prefWidth="97.0" style="-fx-background-color: #003554;" text="20" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+            <Button fx:id="clearMoney" layoutX="213.0" layoutY="400.0" mnemonicParsing="false" onAction="#presetMoney" prefHeight="34.0" prefWidth="125.0" style="-fx-background-color: #003554;" text="Clear" textFill="RED">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+            <Button fx:id="contBtn" layoutX="633.0" layoutY="464.0" mnemonicParsing="false" onAction="#trasComplete" prefHeight="83.0" prefWidth="143.0" style="-fx-background-color: #458B00;" text="Continue" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="26.0" />
+               </font></Button>
+            <Label fx:id="tst" contentDisplay="CENTER" layoutX="524.0" layoutY="485.0" prefHeight="44.0" prefWidth="88.0" textFill="#68f521">
+               <font>
+                  <Font size="27.0" />
+               </font></Label>
+            <Button fx:id="fiftyDollars" layoutX="150.0" layoutY="315.0" mnemonicParsing="false" onAction="#presetMoney" prefHeight="59.0" prefWidth="106.0" style="-fx-background-color: #003554;" text="50" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+          <Button fx:id="oneHundredDollars" layoutX="297.0" layoutY="315.0" mnemonicParsing="false" onAction="#presetMoney" prefHeight="69.0" prefWidth="106.0" style="-fx-background-color: #003554;" text="100" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+            <Button fx:id="button" layoutX="379.0" layoutY="134.0" mnemonicParsing="false" onAction="#confirmation" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: #C81D25;" text="Ok" textFill="WHITE" />
+            <Button fx:id="Back" layoutX="82.0" layoutY="486.0" mnemonicParsing="false" onAction="#goBack" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #C81D25;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font></Button>
+            <Label layoutX="490.0" layoutY="484.0" prefHeight="46.0" prefWidth="34.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

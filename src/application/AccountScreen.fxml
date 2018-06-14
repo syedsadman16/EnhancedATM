@@ -2,26 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountScreenController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="600.0">
+      <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="649.0" prefWidth="831.0">
          <children>
-            <Label layoutX="48.0" layoutY="65.0" text="Hello,">
-               <font>
-                  <Font size="33.0" />
-               </font>
-            </Label>
-            <Label fx:id="nameLabel" layoutX="138.0" layoutY="65.0" text="Label">
-               <font>
-                  <Font name="System Italic" size="33.0" />
-               </font></Label>
-            <Button fx:id="wdrawBtn" layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onAction="#goToTransactionScreen" text="Withdraw" />
-            <Button fx:id="DepBtn" layoutX="236.0" layoutY="313.0" mnemonicParsing="false" onAction="#goToDepositScreen" text="Deposit" />
-            <Button fx:id="asumBtn" layoutX="208.0" layoutY="392.0" mnemonicParsing="false" onAction="#goToBalanceScreen" text="Account Summary" />
-            <Button fx:id="signOutBtn" layoutX="239.0" layoutY="509.0" mnemonicParsing="false" onAction="#signOut" text="Sign Out" />
+            <ImageView fitHeight="649.0" fitWidth="885.0" layoutX="-18.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/tablet.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="64.0" layoutY="47.0" prefHeight="481.0" prefWidth="721.0" style="-fx-background-color: #006494;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="126.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="721.0" />
+                  <Label layoutX="232.0" layoutY="40.0" text="Hello," textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel" layoutX="347.0" layoutY="39.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="40.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="98.0" layoutX="32.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="98.0" layoutX="256.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="98.0" layoutX="483.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="180.0" />
+                  <Button fx:id="signOutBtn" layoutX="149.0" layoutY="409.0" mnemonicParsing="false" onAction="#signOut" prefHeight="58.0" prefWidth="424.0" style="-fx-background-color: #C81D25;" text="Sign Out" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS" size="25.0" />
+                     </font></Button>
+                  <Button fx:id="DepBtn" layoutX="270.0" layoutY="218.0" mnemonicParsing="false" onAction="#goToDepositScreen" prefHeight="81.0" prefWidth="153.0" style="-fx-background-color: #003554;" text="Deposit" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font></Button>
+                  <Button fx:id="asumBtn" layoutX="492.0" layoutY="218.0" mnemonicParsing="false" onAction="#goToBalanceScreen" prefHeight="81.0" prefWidth="162.0" style="-fx-background-color: #003554;" text="Account Summary" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Button>
+                  <Button fx:id="wdrawBtn" layoutX="46.0" layoutY="218.0" mnemonicParsing="false" onAction="#goToTransactionScreen" prefHeight="81.0" prefWidth="153.0" style="-fx-background-color: #003554;" text="Withdraw" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                  <ImageView fitHeight="134.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/logo.PNG" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="286.0" layoutY="360.0" text="Securely signed in " textFill="#00fc11">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
