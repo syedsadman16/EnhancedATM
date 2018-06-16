@@ -13,6 +13,12 @@
    -fx-color: #00A6FB;
 }
 
+.concrete:active {
+   -fx-background: #00A6FB;
+   -fx-border-radius: 0px;
+   -fx-color: white;
+   -fx-padding: 10px;
+}
 
 
 .rose {
