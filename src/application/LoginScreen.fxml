@@ -6,65 +6,51 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginScreenController">
    <children>
-    <AnchorPane layoutX="-6.0" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="500.0">
+    <AnchorPane layoutX="-6.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="830.0">
          <children>
-            <AnchorPane layoutX="48.0" layoutY="84.0" prefHeight="610.0" prefWidth="411.0" style="-fx-background-color: #006494;" />
-            <ImageView fitHeight="534.0" fitWidth="758.0" layoutX="-118.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <AnchorPane layoutX="58.0" layoutY="61.0" prefHeight="469.0" prefWidth="692.0" style="-fx-background-color: #006494;" />
+            <ImageView fitHeight="600.0" fitWidth="881.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Pictures/tablet.png" />
                </image>
             </ImageView>
-            <Button layoutX="183.0" layoutY="459.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="119.0" style="-fx-background-color: #32BF34;" text="Continue">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="361.0" layoutX="279.0" layoutY="105.0" stroke="#003554" strokeType="INSIDE" width="236.0" />
+            <Button layoutX="604.0" layoutY="463.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="119.0" style="-fx-background-color: #32BF34;" text="Continue" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></Button>
-            <GridPane layoutX="121.0" layoutY="231.0" prefHeight="183.0" prefWidth="243.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button fx:id="one" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="116.0" prefWidth="169.0" style="-fx-border-radius: 0; -fx-border-width: 5px;" styleClass="concrete" stylesheets="@application.css" text="1" />
-                  <Button fx:id="two" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="103.0" prefWidth="156.0" scaleShape="false" styleClass="concrete" stylesheets="@application.css" text="2" GridPane.columnIndex="1" />
-                  <Button fx:id="three" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="114.0" prefWidth="173.0" scaleShape="false" styleClass="concrete" stylesheets="@application.css" text="3" GridPane.columnIndex="2" />
-                  <Button fx:id="four" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="100.0" prefWidth="147.0" styleClass="concrete" stylesheets="@application.css" text="4" GridPane.rowIndex="1" />
-                  <Button fx:id="five" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="95.0" prefWidth="120.0" styleClass="concrete" stylesheets="@application.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="six" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="48.0" prefWidth="93.0" styleClass="concrete" stylesheets="@application.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button fx:id="seven" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="84.0" prefWidth="166.0" styleClass="concrete" stylesheets="@application.css" text="7" GridPane.rowIndex="2" />
-                  <Button fx:id="eight" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="87.0" prefWidth="146.0" styleClass="concrete" stylesheets="@application.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="nine" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="72.0" prefWidth="129.0" styleClass="concrete" stylesheets="@application.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button fx:id="zero" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="97.0" prefWidth="150.0" styleClass="concrete" stylesheets="@application.css" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Button fx:id="Clear" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="68.0" prefWidth="202.0" styleClass="rose" text="X" GridPane.rowIndex="3">
-                     <stylesheets>
-                        <URL value="@application.css" />
-                        <URL value="@application.css" />
-                     </stylesheets></Button>
-                  <Button fx:id="Back" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="71.0" prefWidth="130.0" styleClass="rose" stylesheets="@application.css" text="&lt;--" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-               </children>
-            </GridPane>
-            <TextField fx:id="pinScreen" alignment="CENTER" editable="false" layoutX="122.0" layoutY="170.0" prefHeight="46.0" prefWidth="243.0" style="-fx-background-color: #BFD7EA;">
+            <TextField fx:id="pinScreen" alignment="CENTER" editable="false" layoutX="300.0" layoutY="118.0" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #BFD7EA;">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></TextField>
-            <Button fx:id="Cancel" layoutX="183.0" layoutY="521.0" mnemonicParsing="false" onAction="#cancel" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #C81D25;" text="Cancel">
+            <Button fx:id="Cancel" layoutX="97.0" layoutY="463.0" mnemonicParsing="false" onAction="#cancel" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #C81D25;" text="Cancel" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font>
             </Button>
+            <Button fx:id="one" layoutX="299.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" style="-fx-border-radius: 0; -fx-border-width: 5px;" styleClass="concrete" stylesheets="@application.css" text="1" />
+            <Button fx:id="two" layoutX="373.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" scaleShape="false" styleClass="concrete" stylesheets="@application.css" text="2" />
+            <Button fx:id="three" layoutX="445.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" scaleShape="false" styleClass="concrete" stylesheets="@application.css" text="3" />
+            <Button fx:id="four" layoutX="299.0" layoutY="256.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="4" />
+            <Button fx:id="five" layoutX="373.0" layoutY="256.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="5" />
+            <Button fx:id="six" layoutX="445.0" layoutY="256.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="6" />
+            <Button fx:id="seven" layoutX="299.0" layoutY="324.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="7" />
+            <Button fx:id="eight" layoutX="373.0" layoutY="324.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="8" />
+            <Button fx:id="zero" layoutX="373.0" layoutY="397.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="0" />
+            <Button fx:id="nine" layoutX="445.0" layoutY="324.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="concrete" stylesheets="@application.css" text="9" />
+            <Button fx:id="Back" layoutX="445.0" layoutY="397.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="rose" stylesheets="@application.css" text="&lt;--" />
+            <Button fx:id="Clear" layoutX="299.0" layoutY="397.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" styleClass="rose" text="X">
+               <stylesheets>
+                  <URL value="@application.css" />
+                  <URL value="@application.css" />
+               </stylesheets>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="206.0" layoutX="748.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="62.0" />
          </children>
       </AnchorPane>
    </children>
