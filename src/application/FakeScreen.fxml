@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FakeScreenController">
    <children>
       <AnchorPane prefHeight="613.0" prefWidth="830.0">
          <children>
@@ -25,7 +25,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="415.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
             <Label layoutX="245.0" layoutY="65.0" text="Account Summary" />
-            <Label fx:id="nameLabel" layoutX="410.0" layoutY="104.0" prefHeight="36.0" prefWidth="335.0" text="Oops, I cant load your name" textFill="WHITE">
+            <Label fx:id="fnameLabel" layoutX="410.0" layoutY="104.0" prefHeight="36.0" prefWidth="335.0" text="Oops, I cant load your name" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="25.0" />
                </font></Label>
@@ -33,7 +33,7 @@
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
                </font></Label>
-            <Label fx:id="balLabel" layoutX="289.0" layoutY="221.0" prefHeight="32.0" prefWidth="35.0" textFill="WHITE">
+            <Label fx:id="fbalLabel" layoutX="289.0" layoutY="221.0" prefHeight="32.0" prefWidth="35.0" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font></Label>
@@ -41,11 +41,11 @@
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></Label>
-            <Label fx:id="depLabel" layoutX="292.0" layoutY="362.0" prefHeight="32.0" prefWidth="106.0" textFill="#3cd72e">
+            <Label fx:id="fdepLabel" layoutX="292.0" layoutY="362.0" prefHeight="32.0" prefWidth="106.0" textFill="#3cd72e">
                <font>
                   <Font size="22.0" />
                </font></Label>
-            <Label fx:id="wthdwLabel" layoutX="289.0" layoutY="291.0" prefHeight="32.0" prefWidth="64.0" textFill="#dd3e3e">
+            <Label fx:id="fwthdwLabel" layoutX="289.0" layoutY="291.0" prefHeight="32.0" prefWidth="64.0" textFill="#dd3e3e">
                <font>
                   <Font size="22.0" />
                </font></Label>
@@ -53,11 +53,11 @@
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></Label>
-            <Label fx:id="newBalLabel" layoutX="289.0" layoutY="428.0" prefHeight="32.0" prefWidth="82.0" textFill="WHITE">
+            <Label fx:id="fnewBalLabel" layoutX="289.0" layoutY="428.0" prefHeight="32.0" prefWidth="82.0" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font></Label>
-            <Button fx:id="printBtn" layoutX="625.0" layoutY="318.0" mnemonicParsing="false" onAction="#updateGlobalBal" prefHeight="58.0" prefWidth="97.0" style="-fx-background-color: #cc3510;" text="Exit" textFill="WHITE">
+            <Button fx:id="LeaveBtn" layoutX="625.0" layoutY="318.0" mnemonicParsing="false" onAction="#leaveScreen" prefHeight="58.0" prefWidth="97.0" style="-fx-background-color: #cc3510;" text="Exit" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font></Button>

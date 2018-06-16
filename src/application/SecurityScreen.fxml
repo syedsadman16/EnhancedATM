@@ -23,7 +23,10 @@
                <font>
                   <Font size="17.0" />
                </font></Button>
-            <TextField fx:id="screen" editable="false" layoutX="296.0" layoutY="157.0" prefHeight="44.0" prefWidth="183.0" />
+            <TextField fx:id="screen" alignment="CENTER" editable="false" layoutX="289.0" layoutY="157.0" prefHeight="44.0" prefWidth="200.0">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font></TextField>
             <Button fx:id="zero" layoutX="360.0" layoutY="403.0" mnemonicParsing="false" onAction="#buttonClicks" prefHeight="55.0" prefWidth="54.0" style="-fx-background-color: #003554;" text="0" textFill="WHITE">
                <font>
                   <Font size="18.0" />

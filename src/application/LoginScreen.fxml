@@ -19,7 +19,6 @@
                   <Image url="@../Pictures/tablet.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="361.0" layoutX="279.0" layoutY="105.0" stroke="#003554" strokeType="INSIDE" width="236.0" />
             <Button layoutX="604.0" layoutY="463.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="119.0" style="-fx-background-color: #32BF34;" text="Continue" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />

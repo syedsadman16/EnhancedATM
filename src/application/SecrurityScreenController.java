@@ -108,14 +108,13 @@ public class SecrurityScreenController {
 		if (Integer.parseInt((screen.getText())) == num) {
 			loader.setLocation(getClass().getResource("/application/AcctSummaryScreen.fxml"));
 			Parent changeScenes = loader.load();
+			
 			AcctSummaryController n = loader.getController();
 			n.dispayBalance(pin);
 			n.displayName(pin);
-
-			AcctSummaryController control = loader.getController();
-			control.withdrawal(holder);
-			control.deposit(0);
-			control.updateBal();
+			n.withdrawal(holder);
+			n.deposit(0);
+			n.updateBal();
 
 			Scene transaction = new Scene(changeScenes);
 			window.setScene(transaction);
@@ -125,7 +124,14 @@ public class SecrurityScreenController {
 		else if (Integer.parseInt((screen.getText())) == reverseNumber(num)) {
 			loader.setLocation(getClass().getResource("/application/FakeScreen.fxml"));
 			Parent changeScenes = loader.load();
-
+			
+			FakeScreenController n = loader.getController();
+			n.dispayFakeBalance(pin);
+			n.displayFakeName(pin);
+			n.fakeWithdrawal(holder);
+			n.fakeDeposit(0);
+			n.updateFakeBal();
+			
 			Scene transaction = new Scene(changeScenes);
 			window.setScene(transaction);
 			window.show();
