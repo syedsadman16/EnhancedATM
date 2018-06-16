@@ -39,7 +39,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="SRC_ATOP" fill="#5a7d90" height="83.0" layoutX="62.0" layoutY="612.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f4346" height="11.0" layoutX="62.0" layoutY="648.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111111" height="33.0" layoutX="135.0" layoutY="572.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#76c911" height="66.0" layoutX="272.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e9619" height="66.0" layoutX="272.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
             <Label layoutX="191.0" layoutY="580.0" text="REMOVE CASH" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="12.0" />
@@ -51,7 +51,7 @@
             <Button fx:id="twentyDollar" layoutX="453.0" layoutY="526.0" mnemonicParsing="false" onAction="#billCount" prefHeight="91.0" prefWidth="240.0" rotate="68.2" style="-fx-background-image: url('/Pictures/20.jpg'); -fx-background-repeat: no-repeat; -fx-background-size: 240; -fx-alignment: center;" stylesheets="@application.css" text="20" />
             <Button fx:id="fiftyDollar" layoutX="536.0" layoutY="523.0" mnemonicParsing="false" onAction="#billCount" prefHeight="97.0" prefWidth="240.0" rotate="68.2" style="-fx-background-image: url('/Pictures/50.jpg'); -fx-alignment: center; -fx-background-repeat: no-repeat; -fx-background-size: 240;" text="50" />
             <Button fx:id="hundredDollar" layoutX="606.0" layoutY="517.0" mnemonicParsing="false" onAction="#billCount" prefHeight="97.0" prefWidth="240.0" rotate="68.2" style="-fx-background-image: url('/Pictures/100.png'); -fx-background-repeat: no-repeat; -fx-background-size: 240; -fx-alignment: center; -fx-background-position: center;" text="100" />
-            <Button fx:id="Confirm" layoutX="282.0" layoutY="405.0" mnemonicParsing="false" onAction="#transactionScreen" style="-fx-background-color: #76c911;" text="Continue" textFill="WHITE">
+            <Button fx:id="Confirm" layoutX="282.0" layoutY="405.0" mnemonicParsing="false" onAction="#transactionScreen" style="-fx-background-color: #5e9619;" text="Continue" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font></Button>
@@ -78,7 +78,7 @@
                </image>
             </ImageView>
             <Circle fill="#c23434" layoutX="263.0" layoutY="634.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="totalMoney" layoutX="229.0" layoutY="336.0" prefHeight="32.0" prefWidth="87.0" textFill="#0b9715">
+            <Label fx:id="totalMoney" layoutX="229.0" layoutY="336.0" prefHeight="32.0" prefWidth="87.0" textFill="#21e82e">
                <font>
                   <Font name="Comic Sans MS" size="16.0" />
                </font></Label>

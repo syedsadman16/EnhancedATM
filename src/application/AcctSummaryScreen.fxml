@@ -2,23 +2,95 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AcctSummaryController">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="600.0">
+      <AnchorPane prefHeight="613.0" prefWidth="830.0">
          <children>
+            <AnchorPane layoutX="66.0" layoutY="74.0" prefHeight="453.0" prefWidth="690.0" style="-fx-background-color: #006494;" />
+            <ImageView fitHeight="611.0" fitWidth="842.0" layoutX="-11.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/tablet.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="93.0" layoutX="70.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="681.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#272828" height="251.0" layoutX="749.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="68.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="278.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="415.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="58.0" layoutX="102.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
             <Label layoutX="245.0" layoutY="65.0" text="Account Summary" />
-            <Label fx:id="nameLabel" layoutX="168.0" layoutY="117.0" text="Label" />
-            <Label layoutX="61.0" layoutY="208.0" text="Balance" />
-            <Label fx:id="balLabel" layoutX="119.0" layoutY="208.0" text="Label" />
-            <Label layoutX="51.0" layoutY="262.0" text="Withdrawn:" />
-            <Label fx:id="depLabel" layoutX="133.0" layoutY="300.0" text="Label" />
-            <Label layoutX="68.0" layoutY="300.0" text="Deposit" />
-            <Label fx:id="wthdwLabel" layoutX="133.0" layoutY="262.0" text="Label" />
-            <Label layoutX="62.0" layoutY="355.0" prefHeight="17.0" prefWidth="41.0" text="Balance" />
-            <Label fx:id="newBalLabel" layoutX="119.0" layoutY="355.0" text="Label" />
-            <Button fx:id="printBtn" layoutX="231.0" layoutY="473.0" mnemonicParsing="false" onAction="#updateGlobalBal" text="Button" />
+            <Label fx:id="nameLabel" layoutX="410.0" layoutY="104.0" prefHeight="36.0" prefWidth="335.0" text="Oops, I cant load your name" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font></Label>
+            <Label layoutX="136.0" layoutY="224.0" text="Balance" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font></Label>
+            <Label fx:id="balLabel" layoutX="289.0" layoutY="221.0" prefHeight="32.0" prefWidth="169.0" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label layoutX="124.0" layoutY="295.0" text="Withdrawn:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font></Label>
+            <Label fx:id="depLabel" layoutX="292.0" layoutY="362.0" prefHeight="32.0" prefWidth="106.0" textFill="#3cd72e">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label fx:id="wthdwLabel" layoutX="289.0" layoutY="291.0" prefHeight="32.0" prefWidth="64.0" textFill="#dd3e3e">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label layoutX="117.0" layoutY="432.0" prefHeight="24.0" prefWidth="106.0" text="New Balance:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font></Label>
+            <Label fx:id="newBalLabel" layoutX="289.0" layoutY="428.0" prefHeight="32.0" prefWidth="82.0" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Button fx:id="printBtn" layoutX="625.0" layoutY="318.0" mnemonicParsing="false" onAction="#updateGlobalBal" prefHeight="58.0" prefWidth="97.0" style="-fx-background-color: #cc3510;" text="Exit" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font></Button>
+            <Label layoutX="150.0" layoutY="93.0" prefHeight="58.0" prefWidth="282.0" text="Accout Summary" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="138.0" layoutY="366.0" text="Deposit:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="221.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="291.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="362.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="428.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
