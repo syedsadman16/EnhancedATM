@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class InitScreenController {
 	
     @FXML 
-    Button creditCard = new Button("123456789");
+    Button creditCard = new Button("987654321");
     
 	    
 	@FXML

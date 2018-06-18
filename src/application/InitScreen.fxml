@@ -63,6 +63,7 @@
                </image>
             </ImageView>
             <Circle fill="#c23434" layoutX="263.0" layoutY="634.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="Test" layoutX="484.0" layoutY="311.0" />
          </children>
       </AnchorPane>
    </children>

@@ -1,95 +1,50 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class BankData {
 	public static final BankData INSTANCE = new BankData();
 
+    Hashtable<Integer, String> name = new Hashtable<Integer, String>();
+    Hashtable<Integer, Integer> pin = new Hashtable<Integer, Integer>();
+    Hashtable<Integer, Integer> balance = new Hashtable<Integer, Integer>();
+    Hashtable<Integer, String> email = new Hashtable<Integer, String>();
+	public ArrayList<Integer> blc = new ArrayList<Integer>();
+	
+	int index;
+	int bankBalance = 1000;
+
+
 	public static BankData getInstance() {
 		return INSTANCE;
 	}
-
-	public Object[][] arr = new Object[10][10];
-	public ArrayList<Integer> blc = new ArrayList<Integer>();
-	int index;
-	int bankBalance = 1000;
-	TransactionScreenController b;
-
+	
 	public BankData() {
-		arr[0][0] = new String("Syed Sadman"); // name
-		arr[0][1] = new Integer(123456789); // accountNum
-		arr[0][2] = new Integer(1234); // pinNum
-		arr[0][3] = new Integer(3000); // balance
-		arr[0][4] = new String("syedshadman13@gmail.com"); // email
+		name.put(123456789, "Syed Sadman");
+		pin.put(123456789, 1234);
+		balance.put(123456789, 3000);
+		
+		name.put(987654321, "Bob Bobbus");
+		pin.put(987654321, 4321);
+		balance.put(987654321, 72000);
+		
 	}
 
 	public int findPin(int n) {
-		// find index of
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-
-				if (arr[i][j] == (Integer)n ) {
-					index = i;
-					break;
-				}
-
-			}
-		}
-
-		int pin = (Integer) arr[index][2];
-		return pin;
-
+		return pin.get(n);
 	}
 
 	public String findName(int n) {
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-
-				if (arr[i][j] == new Integer(n)) {
-					index = i;
-					break;
-				}
-
-			}
-		}
-
-		String name = (String) arr[index][0];
-		return name;
+		return name.get(n);
 	}
 
 	public int findBalance(int n) {
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-
-				if (arr[i][j] == new Integer(n)) {
-					index = i;
-					break;
-				}
-
-			}
-		}
-
-		int pin = (Integer) arr[index][3];
-		return pin;
+		return balance.get(n);
 	}
 
 	public String findEmail(int n) {
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-
-				if (arr[i][j] == new Integer(n)) {
-					index = i;
-					break;
-				}
-
-			}
-		}
-
-		String email = (String) arr[index][4];
-		return email;
+		return email.get(n);
 	}
 
 	public void addBankBalance(int n) {
@@ -100,16 +55,6 @@ public class BankData {
 		bankBalance -= n;
 	}
 
-	public void addString(int x, int y, String content) {
 
-		arr[x][y] = content;
-
-	}
-
-	public void addInt(int x, int y, int content) {
-
-		arr[x][y] = content;
-
-	}
 
 }

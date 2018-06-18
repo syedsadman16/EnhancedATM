@@ -47,37 +47,37 @@ public class DepositScreenController {
     	if(e.getSource() == fiveDollar)	{
     		this.moneyCount += 5;
     		five++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
 		}
     	if(e.getSource() == tenDollar)	{
     		this.moneyCount += 10;
     		ten++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
     	}
     	if(e.getSource() == oneDollar)	{
     		this.moneyCount += 1;
     		one++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
     	}
     	if(e.getSource() == twentyDollar)	{
     		this.moneyCount += 20;
     		twenty++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
 		}
     	if(e.getSource() == fiftyDollar)	{
     		this.moneyCount += 50;
     		fifty++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
     	}
     	if(e.getSource() == hundredDollar)	{
     		this.moneyCount += 100;
     		hundred++;
-    		countLabel.setText("One: " + one + " Five: " + five + " Ten: " + ten + " Twenty " + twenty + " Fifty: " + fifty + " One Hundred " + hundred);
+    		countLabel.setText("$1: " + one + " $5: " + five + " $10: " + ten + " $20 " + twenty + " $50: " + fifty + " $100 " + hundred);
     		totalMoney.setText(Integer.toString(moneyCount));
     	}
     	

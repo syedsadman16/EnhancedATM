@@ -32,12 +32,14 @@ public class AcctSummaryController {
     private Label newBalLabel;
     @FXML
     private Button printBtn;
+    int recievedPin;
    
       
     
     public void dispayBalance(int pin) {
     	
     	Account bal = new Account(pin);
+    	recievedPin = pin;
     	String setBal = Integer.toString(bal.getBalance());
     	balLabel.setText(setBal);
     	bank.blc.add(Integer.parseInt(balLabel.getText())); //to keep track of balances
@@ -46,6 +48,7 @@ public class AcctSummaryController {
     public void displayName(int pin) {
     	
     	Account nam = new Account(pin);
+    	recievedPin = pin;
     	String name = nam.getName();
     	nameLabel.setText(name);
     	
@@ -74,14 +77,17 @@ public class AcctSummaryController {
     
     public void updateGlobalBal(ActionEvent e) throws IOException {
     	if (e.getSource() == printBtn) {
-    		bank.arr[0][3] = Integer.parseInt(newBalLabel.getText());
+    		
+    		bank.balance.put(recievedPin, Integer.parseInt(newBalLabel.getText()));
     		FXMLLoader loader = new FXMLLoader();
    		    loader.setLocation(getClass().getResource("/application/AccountScreen.fxml"));
    			Parent nextScene = loader.load();
    			Scene acctScreen = new Scene(nextScene);
    			Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+   			
    			AccountScreenController scrn = loader.getController();
    			scrn.setUserName();
+   			
    			window.setScene(acctScreen);
    			window.show();
     	}
