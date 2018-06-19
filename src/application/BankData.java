@@ -25,7 +25,7 @@ public class BankData {
 		pin.put(123456789, 1234);
 		balance.put(123456789, 3000);
 		
-		name.put(987654321, "Bob Bobbus");
+		name.put(987654321, "Sam Happyman");
 		pin.put(987654321, 4321);
 		balance.put(987654321, 72000);
 		
@@ -48,11 +48,11 @@ public class BankData {
 	}
 
 	public void addBankBalance(int n) {
-		bankBalance += n;
+		this.bankBalance = bankBalance + n;
 	}
 
 	public void deductBankBalance(int n) {
-		bankBalance -= n;
+		this.bankBalance = bankBalance - n;
 	}
 
 

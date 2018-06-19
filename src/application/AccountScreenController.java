@@ -43,9 +43,18 @@ public class AccountScreenController {
     
     public void goToTransactionScreen(ActionEvent event) throws IOException {
     	
-		Parent nextScene = FXMLLoader.load( getClass().getResource("/application/TransactionScreen.fxml") );
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/application/TransactionScreen.fxml"));
+		Parent nextScene = loader.load();
 		Scene withdraw = new Scene(nextScene);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		
+		InitScreenController controller = new InitScreenController();
+		TransactionScreenController m = loader.getController();
+		int pin	= Integer.parseInt(controller.creditCard.getText()); 
+
+		m.showBalance(pin);
+		
 		window.setScene(withdraw);
 		window.show();
 		

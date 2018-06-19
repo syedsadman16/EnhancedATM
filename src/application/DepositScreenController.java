@@ -110,6 +110,8 @@ public class DepositScreenController {
 		n.deposit(store);
 		n.updateBal();
 		
+		bank.addBankBalance(store);
+		
 		window.setScene(transaction);
 		window.show();   	
     	

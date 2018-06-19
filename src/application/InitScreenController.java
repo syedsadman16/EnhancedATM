@@ -9,8 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class InitScreenController {
@@ -29,6 +33,26 @@ public class InitScreenController {
 		window.show();
 
 	}
+	
+	 public void handle(MouseEvent mouseEvent) throws IOException {
+	        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+	            if(mouseEvent.getClickCount() == 3){
+	            	Alert a = new Alert(AlertType.INFORMATION);
+	                a.setTitle("Security Alarm");
+	                a.setHeaderText("!!!!!!ALARM IS RINGING!!!!!!");
+	                a.setResizable(true);          
+	                a.showAndWait();
+	                
+	                Parent nextScene = FXMLLoader.load( getClass().getResource("/application/AlarmScreen.fxml") );
+	        		Scene alarm = new Scene(nextScene);
+	        		Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+	        		window.setScene(alarm);
+	        		window.show();
+	                
+	                
+	            }
+	        }
+	    }
 	 
 	    @FXML
 	    void initialize() {

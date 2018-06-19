@@ -9,27 +9,22 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InitScreenController">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AlarmScreenController">
    <children>
-      <AnchorPane prefHeight="703.0" prefWidth="771.0" style="-fx-background-color: #8ca9b9;">
+      <AnchorPane blendMode="SRC_ATOP" prefHeight="703.0" prefWidth="771.0" style="-fx-background-color: #8ca9b9;">
          <children>
-            <AnchorPane layoutX="62.0" layoutY="84.0" prefHeight="471.0" prefWidth="339.0" style="-fx-background-color: #4F595C;" />
+            <AnchorPane layoutX="62.0" layoutY="84.0" prefHeight="471.0" prefWidth="339.0" style="-fx-background-color: red;" />
             <ImageView fitHeight="394.0" fitWidth="540.0" layoutX="-38.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../Pictures/tablet.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="49.0" fitWidth="164.0" layoutX="435.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="196.0" fitWidth="200.0" layoutX="435.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Pictures/moneyDeposit.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="242.0" fitWidth="155.0" layoutX="435.0" layoutY="293.0" onMouseClicked="#handle" pickOnBounds="true" preserveRatio="true">
-               <image>
                   <Image url="@../Pictures/cardSlot.PNG" />
                </image>
             </ImageView>
-            <Button fx:id="creditCard" layoutX="384.0" layoutY="403.0" mnemonicParsing="false" onAction="#changeInitScene" prefHeight="121.0" prefWidth="200.0" rotate="-60.6" style="-fx-background-image: url('/Pictures/CreditCard.PNG'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: 200;" stylesheets="@application.css" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="SRC_ATOP" fill="#5a7d90" height="83.0" layoutX="62.0" layoutY="612.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3f4346" height="11.0" layoutX="62.0" layoutY="648.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111111" height="33.0" layoutX="135.0" layoutY="572.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
@@ -40,12 +35,6 @@
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111111" height="33.0" layoutX="431.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" width="164.0" />
             <Label layoutX="469.0" layoutY="204.0" text="INSERT BILLS" textFill="WHITE">
-               <font>
-                  <Font name="Comic Sans MS" size="12.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5dada71" height="77.0" layoutX="135.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-            <Label layoutX="140.0" layoutY="236.0" text="Please enter your card to begin..." textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="12.0" />
                </font>
@@ -64,6 +53,8 @@
             </ImageView>
             <Circle fill="#c23434" layoutX="263.0" layoutY="634.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
             <Label fx:id="Test" layoutX="484.0" layoutY="311.0" />
+            <Button fx:id="lock" layoutX="454.0" layoutY="428.0" mnemonicParsing="false" onAction="#securityCheck" prefHeight="33.0" prefWidth="30.0" style="-fx-background-image: url('/Pictures/lock.PNG');" />
+            <Circle fill="#c23434" layoutX="581.0" layoutY="293.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </AnchorPane>
    </children>

@@ -61,6 +61,10 @@ import javafx.stage.Stage;
 	    int holder;
 	    @FXML
 	    Label tst;
+	    @FXML
+	    Label limitLabel;
+	    @FXML
+	    Label showBal;
 	    Button button;
 	    BankData bank = new BankData();
 	    
@@ -162,9 +166,15 @@ import javafx.stage.Stage;
 	    }
 	        
 	    public void confirmation() {
+	    	
 	    	holder = Integer.parseInt(money.getText());  
-	    	tst.setText(Integer.toString(holder));
-	    	changeIt(holder);
+	    	if(Integer.parseInt(showBal.getText()) > holder) {
+	    		tst.setText(Integer.toString(holder));
+		    	changeIt(holder);
+	    	} else {
+	    		limitLabel.setText("You exceed your balance");
+	    	}
+	    	
 	    }
 	    
 	    public int changeIt(int aholder) { 
@@ -172,7 +182,15 @@ import javafx.stage.Stage;
 	    	  return holder;
 	    }
 	    
+	    public void showBalance(int pin) {	    	
+	    	Account bal = new Account(pin);
+	    	String setBal = Integer.toString(bal.getBalance());
+	    	showBal.setText(setBal);    	
+	    }
+	    
 	    public void trasComplete(ActionEvent e) throws IOException {
+	    
+	    	if(holder < bank.bankBalance ) {
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("/application/SecurityScreen.fxml"));
 	    	Parent changeScenes = loader.load();
@@ -182,8 +200,13 @@ import javafx.stage.Stage;
 			SecrurityScreenController controller = loader.getController();
 			controller.withdrawal(holder); 
 			
+			bank.deductBankBalance(holder);
+			
 			window.setScene(transaction);
 			window.show();
+	    	} else {
+	    		limitLabel.setText("You can withdraw up to " + bank.bankBalance);
+	    	}
 	    	
 	    }
 	    

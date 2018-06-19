@@ -126,6 +126,16 @@
                <font>
                   <Font size="20.0" />
                </font></Button>
+            <Label fx:id="limitLabel" layoutX="235.0" layoutY="477.0" prefHeight="17.0" prefWidth="208.0" textFill="RED">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="showBal" layoutX="263.0" layoutY="525.0" prefHeight="33.0" prefWidth="151.0" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
