@@ -25,7 +25,7 @@ public class BankData {
 		pin.put(123456789, 1234);
 		balance.put(123456789, 3000);
 		
-		name.put(987654321, "Sam Happyman");
+		name.put(987654321, "Jon Doe");
 		pin.put(987654321, 4321);
 		balance.put(987654321, 72000);
 		
