@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginScreenController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginScreenController">
    <children>
     <AnchorPane layoutX="-6.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="830.0">
          <children>
@@ -23,10 +23,11 @@
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></Button>
-            <TextField fx:id="pinScreen" alignment="CENTER" editable="false" layoutX="300.0" layoutY="118.0" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #BFD7EA;">
+            <TextField fx:id="pinScreen" alignment="CENTER" editable="false" layoutX="298.0" layoutY="118.0" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #BFD7EA;">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
                </font></TextField>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#003554" height="274.0" layoutX="295.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="206.0" />
             <Button fx:id="Cancel" layoutX="97.0" layoutY="463.0" mnemonicParsing="false" onAction="#cancel" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #C81D25;" text="Cancel" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS" size="17.0" />
