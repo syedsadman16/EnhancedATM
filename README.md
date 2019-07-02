@@ -1,9 +1,8 @@
 # EnhancedATM
 
-*Fitness App*
+*Enhanced ATM*
 
-**Fitness App** is an android app that tracks the users running distance and outputs statistics for calories, steps and distance 
-
+**Enhanced ATM** is an ATM simulation that provides a new UI for modern ATM's with improved security features
 Submitted by: **Syed Sadman**
 
 *Quick Start*
